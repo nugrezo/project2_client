@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Doctors</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,35 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Welcome to Doctor`s Website</h1>
+      <!--AUTH PART HTML-->
+<section>
+    <form id="sign-up-form" class="forms">
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <input type="submit" class="form-button" value="Sign up!">
+    </form>
+      <p id="auth-message-sign-up"></p>
+
+    <form id="sign-in-form" class="forms">
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="submit" class="form-button" value="Sign in!">
+    </form>
+    <p id="auth-message-sign-in"></p>
+    <form id="change-password-form" class="forms">
+         <input type="password" name="passwords[old]" placeholder="Old Password">
+         <input type="password" name="passwords[new]" placeholder="New Password">
+         <input type="submit" class="form-button" value="Change Password!">
+   </form>
+   <p id="auth-message-password-change"></p>
+
+   <form id="sign-out-form" class="forms">
+     <input type="submit" value="Sign Out!">
+</form>
+  <p id="auth-message-sign-out"></p>
+</section>
+
     </body>
 </html>
