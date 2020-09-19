@@ -42,5 +42,41 @@
   <p id="auth-message-sign-out"></p>
 </section>
 
+<section>
+  <form id="create-doctor-form" class="forms">
+    <input type="text" name="doctor[name]" placeholder="Name">
+    <input type="text" name="doctor[surName]" placeholder="SurName">
+    <input type="text" name="doctor[profession]" placeholder="Profession">
+    <input type="text" name="doctor[phone]" placeholder="Phone Number">
+    <input type="text" name="doctor[address]" placeholder="Address">
+    <input type="number" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
+    <input type="submit" class="create-button" value="Create Doctor">
+  </form>
+  <p id="doctor-message-created"></p>
+</section>
+
+<section>
+  <form id="show-all-doctors-form" class="forms">
+    <input type="submit" class="create-button" value="Show All Doctors">
+  </form>
+  <p id="doctors"></p>
+</section>
+
+<section>
+  <form id="show-doctor-form" class="forms">
+    <input type="text" name="doctor[id]" placeholder="ID">
+    <input type="submit" class="show-button" value="Show Doctor">
+  </form>
+  <p id="doctor"></p>
+</section>
+  <section>
+    <form id="delete-doctor-form" class="forms">
+      <input type="text" name="doctor[id]" placeholder="ID">
+      <input type="submit" class="delete-button" value="Delete Doctor">
+    </form>
+    <p id="doctor-delete"></p>
+</section>
+
+
     </body>
 </html>
