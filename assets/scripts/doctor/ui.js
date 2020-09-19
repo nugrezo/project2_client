@@ -34,7 +34,7 @@ const showDoctorSuccess = function (res) {
 '<br><br>')
 }
 
-const showAllDoctorsFailure = function () {
+const showDoctorFailure = function () {
   $('#show-all-doctors-form').text('Try again.')
 }
 
@@ -50,7 +50,7 @@ module.exports = {
   createDoctorSuccess: createDoctorSuccess,
   createDoctorFailure: createDoctorFailure,
   showAllDoctorsSuccess: showAllDoctorsSuccess,
-  showAllDoctorsFailure: showAllDoctorsFailure,
+  showDoctorFailure: showDoctorFailure,
   showDoctorSuccess: showDoctorSuccess,
   deleteDoctorSuccess: deleteDoctorSuccess,
   deleteDoctorFailure: deleteDoctorFailure
