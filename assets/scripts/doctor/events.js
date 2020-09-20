@@ -44,9 +44,19 @@ const onUpdateDoctorForm = function (event) {
   console.log('event is:', event)
   const form = event.target
   const data = getFormFields(form)
-  api.updateDoctor(data.doctor.id)
+  api.getDoctor(data.doctor.id)
     .then(ui.updateDoctorSuccess)
     .catch(ui.updateDoctorFailure)
+}
+
+const onEditDoctorForm = function (event) {
+  event.preventDefault()
+  console.log('event is:', event)
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateDoctor(data, data.doctor.id)
+    .then(ui.editDoctorSuccess)
+    .catch(ui.editDoctorFailure)
 }
 
 module.exports = {
@@ -54,5 +64,6 @@ module.exports = {
   onShowAllDoctorsForm: onShowAllDoctorsForm,
   onShowDoctorForm: onShowDoctorForm,
   onDeleteDoctorForm: onDeleteDoctorForm,
-  onUpdateDoctorForm: onUpdateDoctorForm
+  onUpdateDoctorForm: onUpdateDoctorForm,
+  onEditDoctorForm: onEditDoctorForm
 }

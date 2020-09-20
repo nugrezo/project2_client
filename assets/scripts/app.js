@@ -19,6 +19,7 @@ $(() => {
     $('#show-all-doctors-form').on('submit', doctorEvents.onShowAllDoctorsForm)
     $('#show-doctor-form').on('submit', doctorEvents.onShowDoctorForm)
     $('#delete-doctor-form').on('submit', doctorEvents.onDeleteDoctorForm)
-    $('#update-doctor-form').on('submit', doctorEvents.onUptadeDoctorForm)
+    $('#update-doctor-form').on('submit', doctorEvents.onUpdateDoctorForm)
+    $('#edit-doctor-form').on('submit', doctorEvents.onEditDoctorForm)
   })
 })

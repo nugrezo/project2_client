@@ -81,15 +81,23 @@
 <section>
   <form id="update-doctor-form" class="forms">
     <input type="text" name="doctor[id]" placeholder="ID">
-    <input type="submit" class="update-button" value="Update Doctor"><br><br>
-    <input type="text" name="doctor[name]" placeholder="Name">
-    <input type="text" name="doctor[surName]" placeholder="SurName">
-    <input type="text" name="doctor[profession]" placeholder="Profession">
-    <input type="text" name="doctor[phone]" placeholder="Phone Number">
-    <input type="text" name="doctor[address]" placeholder="Address">
-    <input type="number" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
+    <input type="submit" class="show-button" value="Get Doctor for update">
   </form>
   <p id="doctor-update"></p>
+</section>
+
+<section>
+  <form id="edit-doctor-form" class="forms">
+    <input type="hidden" id="doctor_id" name="doctor[id]" placeholder="ID">
+    <input type="text" id="doctor_name" name="doctor[name]" placeholder="Name">
+    <input type="text" id="doctor_surName" name="doctor[surName]" placeholder="SurName">
+    <input type="text" id="doctor_profession" name="doctor[profession]" placeholder="Profession">
+    <input type="text" id="doctor_phone" name="doctor[phone]" placeholder="Phone Number">
+    <input type="text" id="doctor_address" name="doctor[address]" placeholder="Address">
+    <input type="number" id="doctor_yearsOfExperience" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
+    <input type="submit" class="update-button" value="Edit Doctor"><br><br>
+  </form>
+  <p id="doctor-edit"></p>
 </section>
 
     </body>

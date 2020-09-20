@@ -42,13 +42,14 @@ const deleteDoctor = function (id) {
   })
 }
 
-const updateDoctor = function (id) {
+const updateDoctor = function (data, id) {
   return $.ajax({
     url: config.apiUrl + '/doctors/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 
