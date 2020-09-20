@@ -23,7 +23,6 @@ const onShowAllDoctorsForm = function (event) {
 const onShowDoctorForm = function (event) {
   event.preventDefault()
   const form = event.target
-  console.log('showTrigger')
   const data = getFormFields(form)
   api.getDoctor(data.doctor.id)
     .then(ui.showDoctorSuccess)
@@ -33,16 +32,27 @@ const onShowDoctorForm = function (event) {
 const onDeleteDoctorForm = function (event) {
   event.preventDefault()
   const form = event.target
-  console.log('deleteTrigger')
+  console.log('event is:', event)
   const data = getFormFields(form)
   api.deleteDoctor(data.doctor.id)
     .then(ui.deleteDoctorSuccess)
     .catch(ui.deleteDoctorFailure)
 }
 
+const onUpdateDoctorForm = function (event) {
+  event.preventDefault()
+  console.log('event is:', event)
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateDoctor(data.doctor.id)
+    .then(ui.updateDoctorSuccess)
+    .catch(ui.updateDoctorFailure)
+}
+
 module.exports = {
   onCreateDoctorForm: onCreateDoctorForm,
   onShowAllDoctorsForm: onShowAllDoctorsForm,
   onShowDoctorForm: onShowDoctorForm,
-  onDeleteDoctorForm: onDeleteDoctorForm
+  onDeleteDoctorForm: onDeleteDoctorForm,
+  onUpdateDoctorForm: onUpdateDoctorForm
 }

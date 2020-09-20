@@ -69,6 +69,7 @@
   </form>
   <p id="doctor"></p>
 </section>
+
   <section>
     <form id="delete-doctor-form" class="forms">
       <input type="text" name="doctor[id]" placeholder="ID">
@@ -77,6 +78,19 @@
     <p id="doctor-delete"></p>
 </section>
 
+<section>
+  <form id="update-doctor-form" class="forms">
+    <input type="text" name="doctor[id]" placeholder="ID">
+    <input type="submit" class="update-button" value="Update Doctor"><br><br>
+    <input type="text" name="doctor[name]" placeholder="Name">
+    <input type="text" name="doctor[surName]" placeholder="SurName">
+    <input type="text" name="doctor[profession]" placeholder="Profession">
+    <input type="text" name="doctor[phone]" placeholder="Phone Number">
+    <input type="text" name="doctor[address]" placeholder="Address">
+    <input type="number" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
+  </form>
+  <p id="doctor-update"></p>
+</section>
 
     </body>
 </html>
