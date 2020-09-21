@@ -2,6 +2,7 @@ const store = require('./../store')
 
 const signUpSuccess = function (res) {
   $('#auth-message-sign-up').show()
+  $('#sign-in-form').show()
   $('#auth-message-sign-up').text('Thanks for Siging up ' + res.user.email + ' You can Sign In Now')
   $('#sign-up-form').trigger('reset')
   $('#sign-out-form').hide()
@@ -23,10 +24,13 @@ const signInSuccess = function (res) {
   $('#start-game').show()
   $('#auth-message-sign-up').show()
   $('#auth-message-sign-up').text('')
-  $('#sign-out-form').show()
   $('#auth-message-sign-out').hide()
   $('#change-password-form').show()
   $('#auth-message-password-change').show()
+  $('.signup-form').hide()
+  $('.signin-form').hide()
+  $('#welcome').hide()
+  $('#exp').hide()
 }
 
 const signInFailure = function () {
@@ -35,8 +39,13 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (res) {
-  $('#auth-message-password-change').text('Password Changed!')
   $('#change-password-form').trigger('reset')
+  $('#auth-message-sign-in').hide()
+  $('.changepassword-form').hide()
+  $('#change-password-form').hide()
+  $('#start-message').text('Password Changed! Now you can start """CRUD""" operations with createting a doctor form.')
+  $('#start-message1').text('Please fill out the form below.')
+  $('#create-doctor-form').show()
 }
 
 const changePasswordFailure = function (res) {

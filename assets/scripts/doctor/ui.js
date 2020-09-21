@@ -1,5 +1,8 @@
 const createDoctorSuccess = function (res) {
-  $('#doctor-message-created').text('You created doctor successfully')
+  $('#doctor-message-created').text('You created doctor successfully. Now you can hit show All Doctors button to see all doctors that you`ve created. ')
+  $('#show-all-doctors-form').show()
+  $('#start-message').hide()
+  $('#start-message1').hide()
 }
 
 const createDoctorFailure = function () {
@@ -16,6 +19,10 @@ const showAllDoctorsSuccess = function (res) {
   $.each(res.doctors, function (index, doctor) {
     addDoctorToUi(selector, doctor)
   })
+  $('#show-all-doctors-message').text('Great. You`ve listed all the doctors that you created. Please copy the id of doctor in order to see specific doctor.')
+  $('#show-doctor-form').show()
+  $('#doctor-message-created').hide()
+  $('#create-doctor-form').hide()
 }
 
 const showAllDoctorsFailure = function () {
@@ -30,6 +37,9 @@ const showDoctorSuccess = function (res) {
   $(selector).empty()
   //  add doctor object to result area
   addDoctorToUi(selector, doctor)
+  $('#show-all-doctors-message').hide()
+  $('#delete-doctor-form').show()
+  $('#show-doctor-message').text('Great! Now you can copy and past the id of doctor and delete it.')
 }
 
 // Appends doctor object with UI format to given dom element
@@ -53,7 +63,8 @@ const showDoctorFailure = function () {
 }
 
 const deleteDoctorSuccess = function (res) {
-  $('#doctor').text('You`ve deleted doctor successfully.')
+  $('#doctor-delete').text('You`ve deleted doctor successfully.Now you can update a specific doctor with its id. Please copy do doctor of id and paste it below.')
+  $('#update-doctor-form').show()
 }
 
 const deleteDoctorFailure = function () {
@@ -70,6 +81,7 @@ const updateDoctorSuccess = function (res) {
   $('#edit-doctor-form').find('#doctor_phone').val(doctor.phone)
   $('#edit-doctor-form').find('#doctor_address').val(doctor.address)
   $('#edit-doctor-form').find('#doctor_yearsOfExperience').val(doctor.yearsOfExperience)
+  $('#edit-doctor-form').show()
 }
 
 const updateDoctorFailure = function () {
@@ -77,11 +89,11 @@ const updateDoctorFailure = function () {
 }
 
 const editDoctorSuccess = function (res) {
-  console.log('edit')
+  $('#doctor-edit').text('You`ve successfully updated the doctor. Now you complated all the steps.Bye')
 }
 
 const editDoctorFailure = function () {
-  console.log('edited')
+  $('#doctor-edit').text('Failed. Try again.')
 }
 
 module.exports = {

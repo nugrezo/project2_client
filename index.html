@@ -12,38 +12,62 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Welcome to Doctor`s Website</h1>
-      <!--AUTH PART HTML-->
+      <h1 id="welcome">Welcome to Doctor`s Website</h1>
+      <h6 id="exp">Please sign up to create, delete, uptade and reach form data for Doctors</h6>
 <section>
-    <form id="sign-up-form" class="forms">
-      <input type="text" name="credentials[email]" placeholder="Email">
-      <input type="password" name="credentials[password]" placeholder="Password">
-      <input type="password" name="credentials[passwordConfirmation]" placeholder="Confirm Password">
+  <div class="wrapper">
+  <div class="container">
+
+    <div class="signup-form">
+    <form id="sign-up-form" class="signup">
+      <input type="text" name="credentials[email]" class="input" placeholder="Email">
+      <input type="password" name="credentials[password]" class="input" placeholder="Password">
+      <input type="password" name="credentials[passwordConfirmation]" class="input" placeholder="Confirm Password">
       <input type="submit" class="form-button" value="Sign up!">
     </form>
-      <p id="auth-message-sign-up"></p>
+      </div>
+        <p id="auth-message-sign-up"></p>
 
-    <form id="sign-in-form" class="forms">
-      <input type="text" name="credentials[email]" placeholder="Email">
-      <input type="password" name="credentials[password]" placeholder="Password">
+    <div class="signin-form">
+    <form id="sign-in-form" class="signin">
+      <input type="text" name="credentials[email]" class="input" placeholder="Email">
+      <input type="password" name="credentials[password]" class="input" placeholder="Password">
       <input type="submit" class="form-button" value="Sign in!">
     </form>
+    </div>
     <p id="auth-message-sign-in"></p>
-    <form id="change-password-form" class="forms">
-         <input type="password" name="passwords[old]" placeholder="Old Password">
-         <input type="password" name="passwords[new]" placeholder="New Password">
+
+    <div class="changepassword-form">
+    <form id="change-password-form" class="changePassword">
+         <input type="password" name="passwords[old]" class="input" placeholder="Old Password">
+         <input type="password" name="passwords[new]" class="input" placeholder="New Password">
          <input type="submit" class="form-button" value="Change Password!">
    </form>
    <p id="auth-message-password-change"></p>
 
+     </div>
+
+  </div>
+
+
+
+</div>
+
+</section>
+
+<p id="start-message"></p>
+<p id="start-message1"></p>
+
+<section>
    <form id="sign-out-form" class="forms">
      <input type="submit" value="Sign Out!">
 </form>
   <p id="auth-message-sign-out"></p>
+
 </section>
 
 <section>
-  <form id="create-doctor-form" class="forms">
+  <form id="create-doctor-form" class="createDoctor">
     <input type="text" name="doctor[name]" placeholder="Name">
     <input type="text" name="doctor[surName]" placeholder="SurName">
     <input type="text" name="doctor[profession]" placeholder="Profession">
@@ -68,6 +92,7 @@
     <input type="submit" class="show-button" value="Show Doctor">
   </form>
   <p id="doctor"></p>
+  <p id="show-all-doctors-message"></p>
 </section>
 
   <section>
