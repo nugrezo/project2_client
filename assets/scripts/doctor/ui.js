@@ -1,13 +1,14 @@
 const createDoctorSuccess = function (res) {
-  $('#doctor-message-created').text('You created doctor successfully. Now you can hit show All Doctors button to see all doctors that you`ve created. ')
-  $('#show-all-doctors-form').show()
-  $('#start-message').hide()
-  $('#start-message1').hide()
+  $('#create-doctor-message').text('You created doctor successfully.')
+  $('#create-doctor-form').trigger('reset')
+  $('#start-message').text('')
+  $('#delete-doctor-message').text('')
 }
 
 const createDoctorFailure = function () {
   $('#doctor-message-created').text('All required information must be complated.')
-  $('#create-doctor-form').trigger('reset')
+  $('#start-message').text('')
+  $('#delete-doctor-message').text('')
 }
 
 const showAllDoctorsSuccess = function (res) {
@@ -19,14 +20,19 @@ const showAllDoctorsSuccess = function (res) {
   $.each(res.doctors, function (index, doctor) {
     addDoctorToUi(selector, doctor)
   })
-  $('#show-all-doctors-message').text('Great. You`ve listed all the doctors that you created. Please copy the id of doctor in order to see specific doctor.')
-  $('#show-doctor-form').show()
-  $('#doctor-message-created').hide()
-  $('#create-doctor-form').hide()
+  $('#show-all-doctors-message').text('Great. You`ve listed all the doctors that you created.')
+  $('#create-doctor-message').text('')
+  $('#delete-doctor-message').text('')
+  $('#edit-doctor-message').text('')
+  $('#start-message').text('')
+  $('#show-doctor-message').text('')
 }
 
 const showAllDoctorsFailure = function () {
   $('#show-doctor-form').text('Try again.')
+  $('#start-message').text('')
+  $('#delete-doctor-message').text('')
+  $('#show-doctor-message').text('')
 }
 
 const showDoctorSuccess = function (res) {
@@ -37,9 +43,12 @@ const showDoctorSuccess = function (res) {
   $(selector).empty()
   //  add doctor object to result area
   addDoctorToUi(selector, doctor)
-  $('#show-all-doctors-message').hide()
-  $('#delete-doctor-form').show()
-  $('#show-doctor-message').text('Great! Now you can copy and past the id of doctor and delete it.')
+
+  $('#show-doctor-message').text('Great! You list the doctor successfully. Click Show all Doctors to see your new list! ')
+  $('#show-doctor-form').trigger('reset')
+  $('#show-all-doctors-message').text('')
+  $('#edit-doctor-message').text('')
+  $('#delete-doctor-message').text('')
 }
 
 // Appends doctor object with UI format to given dom element
@@ -59,16 +68,23 @@ const addDoctorToUiToLine = function (fPhrase, secPhrase) {
 }
 
 const showDoctorFailure = function () {
-  $('#doctor').text('Try again.')
+  $('#show-doctor-message').text('Try again.')
+  $('#start-message').text('')
+  $('#delete-doctor-message').text('')
+  $('#show-all-doctors-message').text('')
 }
 
 const deleteDoctorSuccess = function (res) {
-  $('#doctor-delete').text('You`ve deleted doctor successfully.Now you can update a specific doctor with its id. Please copy do doctor of id and paste it below.')
-  $('#update-doctor-form').show()
+  $('#delete-doctor-message').text('You`ve deleted doctor successfully.Click Show all Doctors to see your new list!')
+  $('#delete-doctor-form').trigger('reset')
+  $('#show-doctor-message').text('')
+  $('#doctor').text('')
+  $('#start-message').text('')
+  $('#edit-doctor-message').text('')
 }
 
 const deleteDoctorFailure = function () {
-  $('#doctor').text('Try again.')
+  $('#delete-doctor-message').text('Try again.')
 }
 
 // Fill edit form for selected object
@@ -81,19 +97,34 @@ const updateDoctorSuccess = function (res) {
   $('#edit-doctor-form').find('#doctor_phone').val(doctor.phone)
   $('#edit-doctor-form').find('#doctor_address').val(doctor.address)
   $('#edit-doctor-form').find('#doctor_yearsOfExperience').val(doctor.yearsOfExperience)
-  $('#edit-doctor-form').show()
+  $('#update-doctor-form').trigger('reset')
+  $('#delete-doctor-message').text('')
+  $('#start-message').text('')
+  $('#edit-doctor-message').text('')
+  $('#show-all-doctors-message').text('')
+  $('#show-doctor-message').text('')
+  $('#doctor').text('')
 }
 
 const updateDoctorFailure = function () {
-  $('#doctor-update').text('Try again.')
+  $('#update-doctor-message').text('Try again.')
+  $('#start-message').text('')
+  $('#show-doctor-message').text('')
 }
 
 const editDoctorSuccess = function (res) {
-  $('#doctor-edit').text('You`ve successfully updated the doctor. Now you complated all the steps.Bye')
+  $('#edit-doctor-message').text('You`ve successfully updated the doctor. Click Show all Doctors to see your new list!')
+  $('#edit-doctor-form').trigger('reset')
+  $('#start-message').text('')
+  $('#delete-doctor-message').text('')
+  $('#show-all-doctors-message').text()
+  $('#show-doctor-message').text('')
 }
 
 const editDoctorFailure = function () {
-  $('#doctor-edit').text('Failed. Try again.')
+  $('#edit-doctor-message').text('Failed. Try again.')
+  $('#start-message').text('')
+  $('#show-doctor-message').text('')
 }
 
 module.exports = {

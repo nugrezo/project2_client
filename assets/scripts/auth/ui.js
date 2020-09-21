@@ -2,11 +2,8 @@ const store = require('./../store')
 
 const signUpSuccess = function (res) {
   $('#auth-message-sign-up').show()
-  $('#sign-in-form').show()
   $('#auth-message-sign-up').text('Thanks for Siging up ' + res.user.email + ' You can Sign In Now')
   $('#sign-up-form').trigger('reset')
-  $('#sign-out-form').hide()
-  $('#auth-message-sign-out').hide()
 }
 
 const signUpFailure = function () {
@@ -16,21 +13,9 @@ const signUpFailure = function () {
 
 const signInSuccess = function (res) {
   store.user = res.user
-  $('#auth-message-sign-in').show()
   $('#auth-message-sign-in').text('Thanks for Signing in ' + res.user.email)
   $('#sign-in-form').trigger('reset')
-  $('#sign-in-form').hide()
-  $('#sign-up-form').hide()
-  $('#start-game').show()
-  $('#auth-message-sign-up').show()
-  $('#auth-message-sign-up').text('')
-  $('#auth-message-sign-out').hide()
-  $('#change-password-form').show()
-  $('#auth-message-password-change').show()
-  $('.signup-form').hide()
-  $('.signin-form').hide()
-  $('#welcome').hide()
-  $('#exp').hide()
+  $('#auth-message-sign-up').hide()
 }
 
 const signInFailure = function () {
@@ -40,12 +25,25 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function (res) {
   $('#change-password-form').trigger('reset')
-  $('#auth-message-sign-in').hide()
-  $('.changepassword-form').hide()
-  $('#change-password-form').hide()
-  $('#start-message').text('Password Changed! Now you can start """CRUD""" operations with createting a doctor form.')
-  $('#start-message1').text('Please fill out the form below.')
+  $('#start-message').text('Password Changed! Now you can start """CRUD""" operations!')
+  $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
+  $('.container').hide()
+  $('#exp').hide()
   $('#create-doctor-form').show()
+  $('#create-doctor-message').show()
+  $('#show-all-doctors-form').show()
+  $('#show-all-doctors-message').show()
+  $('#show-doctor-form').show()
+  $('#show-doctor-message').show()
+  $('#delete-doctor-form').show()
+  $('#delete-doctor-message').show()
+  $('#update-doctor-form').show()
+  $('#update-doctor-message').show()
+  $('#edit-doctor-form').show()
+  $('#edit-doctor-message').show()
+  $('#sign-out-form').show()
+  $('#auth-message-sign-out').text('')
 }
 
 const changePasswordFailure = function (res) {
@@ -53,26 +51,32 @@ const changePasswordFailure = function (res) {
   $('#change-password-form').trigger('reset')
 }
 const signOutSuccess = function (res) {
-  $('#auth-message-sign-in').hide()
-  $('#auth-message-sign-out').show()
   $('#auth-message-sign-out').text('You`ve Successfully signed out')
   $('#sign-out-form').hide()
-  $('#change-password-form').hide()
-  $('#auth-message-password-change').hide()
-  $('#get-all-games').hide()
-  $('#game-message-get-all-games').hide()
-  $('#start-game').hide()
-  $('.container').hide()
-  $('#message-sign-out').show()
-  $('#sign-up-form').show()
+  $('#auth-message-sign-up').hide()
   $('#sign-in-form').show()
-  $('#auth-message-password-change').text('')
+  $('#auth-message-sign-in').text('')
+  $('#sign-up-form').show()
+  $('.container').show()
+  $('#exp').show()
+  $('#start-message').text('')
+  $('#create-doctor-form').hide()
+  $('#create-doctor-message').text('')
+  $('#show-all-doctors-form').hide()
+  $('#show-all-doctors-message').text('')
+  $('#show-doctor-form').hide()
+  $('#show-doctor-message').text('')
+  $('#delete-doctor-form').hide()
+  $('#delete-doctor-message').text('')
+  $('#update-doctor-form').hide()
+  $('#update-doctor-message').text('')
+  $('#edit-doctor-form').hide()
+  $('#edit-doctor-message').text('')
+  $('#doctors').text('')
 }
 
 const signOutFailure = function (res) {
-  $('#auth-message-sign-out').show()
   $('#auth-message-sign-out').text('Try again.')
-  $('#sign-out-form').trigger('reset')
 }
 module.exports = {
   signUpSuccess: signUpSuccess,
