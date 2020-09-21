@@ -73,7 +73,7 @@
 
 <section>
   <form id="show-all-doctors-form" class="forms">
-    <input type="submit" class="create-button" value="Show All Doctors">
+    <input type="submit" class="show-all-doctors-button" value="Show All Doctors">
   </form>
   <p id="doctors"></p>
   <p id="show-all-doctors-message"></p>
@@ -82,7 +82,7 @@
 <section>
   <form id="show-doctor-form" class="forms">
     <input type="text" name="doctor[id]" placeholder="ID">
-    <input type="submit" class="show-button" value="Show Doctor">
+    <input type="submit" class="show-doctor-button" value="Show Doctor">
   </form>
   <p id="doctor"></p>
   <p id="show-doctor-message"></p>
@@ -99,7 +99,7 @@
 <section>
   <form id="update-doctor-form" class="forms">
     <input type="text" name="doctor[id]" placeholder="ID">
-    <input type="submit" class="show-button" value="Get Doctor for update">
+    <input type="submit" class="update-doctor-button" value="Get Doctor for update">
   </form>
   <p id="update-doctor-message"></p>
 </section>
@@ -113,13 +113,13 @@
     <input type="text" id="doctor_phone" name="doctor[phone]" placeholder="Phone Number">
     <input type="text" id="doctor_address" name="doctor[address]" placeholder="Address">
     <input type="number" id="doctor_yearsOfExperience" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
-    <input type="submit" class="update-button" value="Edit Doctor"><br><br>
+    <input type="submit" class="edit-doctor-button" value="Edit Doctor"><br><br>
   </form>
   <p id="edit-doctor-message"></p>
 </section>
 
 <section>
-   <form id="sign-out-form" class="forms">
+   <form id="sign-out-form" class="sign-out-form">
      <input type="submit" value="Sign Out!">
 </form>
   <p id="auth-message-sign-out"></p>

@@ -100,6 +100,36 @@ body {
   margin-bottom: 30px;
 }
 
+.create-button {
+  background-color: green;
+  color: white;
+}
+
+.show-all-doctors-button {
+  background-color: green;
+  color: white;
+}
+
+.show-doctor-button {
+  background-color: green;
+  color: white;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+.update-doctor-button {
+  background-color: yellow;
+
+}
+
+.edit-doctor-button {
+  background-color: yellow;
+
+}
+
 ::-moz-placeholder { /* Firefox 19+ */
   color: #3e3e40;
   font-family: roboto;
