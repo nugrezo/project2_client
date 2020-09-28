@@ -70,6 +70,7 @@ const signOutSuccess = function (res) {
   $('#show-all-doctors-message').text('')
   $('#show-doctor-form').hide()
   $('#show-doctor-message').text('')
+  $('#doctor').text('')
   $('#delete-doctor-form').hide()
   $('#delete-doctor-message').text('')
   $('#update-doctor-form').hide()

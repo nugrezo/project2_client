@@ -32,7 +32,7 @@ const showAllDoctorsSuccess = function (res) {
 }
 
 const showAllDoctorsFailure = function () {
-  $('#show-doctor-form').text('Try again.')
+  $('#show-all-doctors-form').text('Try again.')
   $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
   $('#show-doctor-message').text('')
