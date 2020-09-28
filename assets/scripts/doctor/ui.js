@@ -1,14 +1,17 @@
 const createDoctorSuccess = function (res) {
   $('#create-doctor-message').text('You created doctor successfully.')
   $('#create-doctor-form').trigger('reset')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
+  $('auth-message-sign-in').text('')
+  $('#auth-message-sign-in').hide()
 }
 
 const createDoctorFailure = function () {
   $('#doctor-message-created').text('All required information must be complated.')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
+  $('auth-message-sign-in').text('')
 }
 
 const showAllDoctorsSuccess = function (res) {
@@ -24,13 +27,13 @@ const showAllDoctorsSuccess = function (res) {
   $('#create-doctor-message').text('')
   $('#delete-doctor-message').text('')
   $('#edit-doctor-message').text('')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#show-doctor-message').text('')
 }
 
 const showAllDoctorsFailure = function () {
   $('#show-doctor-form').text('Try again.')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
   $('#show-doctor-message').text('')
 }
@@ -69,7 +72,7 @@ const addDoctorToUiToLine = function (fPhrase, secPhrase) {
 
 const showDoctorFailure = function () {
   $('#show-doctor-message').text('Try again.')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
   $('#show-all-doctors-message').text('')
 }
@@ -79,7 +82,7 @@ const deleteDoctorSuccess = function (res) {
   $('#delete-doctor-form').trigger('reset')
   $('#show-doctor-message').text('')
   $('#doctor').text('')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#edit-doctor-message').text('')
 }
 
@@ -99,31 +102,33 @@ const updateDoctorSuccess = function (res) {
   $('#edit-doctor-form').find('#doctor_yearsOfExperience').val(doctor.yearsOfExperience)
   $('#update-doctor-form').trigger('reset')
   $('#delete-doctor-message').text('')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#edit-doctor-message').text('')
   $('#show-all-doctors-message').text('')
   $('#show-doctor-message').text('')
   $('#doctor').text('')
+  $('#update-doctor-message').text('Ready to edit')
 }
 
 const updateDoctorFailure = function () {
   $('#update-doctor-message').text('Try again.')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#show-doctor-message').text('')
 }
 
 const editDoctorSuccess = function (res) {
   $('#edit-doctor-message').text('You`ve successfully updated the doctor. Click Show all Doctors to see your new list!')
   $('#edit-doctor-form').trigger('reset')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
   $('#show-all-doctors-message').text()
   $('#show-doctor-message').text('')
+  $('#update-doctor-message').text('')
 }
 
 const editDoctorFailure = function () {
   $('#edit-doctor-message').text('Failed. Try again.')
-  $('#start-message').text('')
+  $('#change-password-message').text('')
   $('#show-doctor-message').text('')
 }
 

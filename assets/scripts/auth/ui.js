@@ -16,16 +16,8 @@ const signInSuccess = function (res) {
   $('#auth-message-sign-in').text('Thanks for Signing in ' + res.user.email)
   $('#sign-in-form').trigger('reset')
   $('#auth-message-sign-up').hide()
-}
-
-const signInFailure = function () {
-  $('#auth-message-sign-in').text('Try again.')
-  $('#sign-in-form').trigger('reset')
-}
-
-const changePasswordSuccess = function (res) {
-  $('#change-password-form').trigger('reset')
-  $('#start-message').text('Password Changed! Now you can start """CRUD""" operations!')
+  $('#change-password-form').show()
+  $('#change-password-message').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('.container').hide()
@@ -46,6 +38,16 @@ const changePasswordSuccess = function (res) {
   $('#auth-message-sign-out').text('')
 }
 
+const signInFailure = function () {
+  $('#auth-message-sign-in').text('Try again.')
+  $('#sign-in-form').trigger('reset')
+}
+
+const changePasswordSuccess = function (res) {
+  $('#change-password-form').trigger('reset')
+  $('#change-password-message').text('Password Changed!')
+}
+
 const changePasswordFailure = function (res) {
   $('#auth-message-password-change').text('Try again.')
   $('#change-password-form').trigger('reset')
@@ -59,7 +61,9 @@ const signOutSuccess = function (res) {
   $('#sign-up-form').show()
   $('.container').show()
   $('#exp').show()
-  $('#start-message').text('')
+  $('#change-password-message').text('')
+  $('#change-password-form').text('')
+  $('#auth-message-password-change').text('')
   $('#create-doctor-form').hide()
   $('#create-doctor-message').text('')
   $('#show-all-doctors-form').hide()

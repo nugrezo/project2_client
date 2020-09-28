@@ -22,6 +22,8 @@ $(() => {
     $('#edit-doctor-form').hide()
     $('#edit-doctor-message').hide()
     $('#sign-out-form').hide()
+    $('#change-password-form').hide()
+    $('#change-password-message').hide()
     $('#sign-up-form').on('submit', authEvents.onSignUpForm)
     $('#sign-in-form').on('submit', authEvents.onSignInForm)
     $('#change-password-form').on('submit', authEvents.onChangePasswordForm)

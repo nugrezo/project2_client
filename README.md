@@ -9,9 +9,7 @@ The app is able to run all off the above functions once the user sign up and
 than sign-in.
 
 **Important Links**
-
-- Deployed Repo: https://github.com/nugrezo/project2_client
-- Client Repo: https://github.com/nugrezo/project2_client
+Backend repo can be found here : https://github.com/nugrezo/project2_api
 
 **Planning Story**
 
