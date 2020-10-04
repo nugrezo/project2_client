@@ -3,15 +3,14 @@ const createDoctorSuccess = function (res) {
   $('#create-doctor-form').trigger('reset')
   $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
-  $('auth-message-sign-in').text('')
-  $('#auth-message-sign-in').hide()
+  $('#edit-doctor-message').text('')
 }
 
 const createDoctorFailure = function () {
-  $('#doctor-message-created').text('All required information must be complated.')
+  $('#create-doctor-message').text('All required information must be complated.')
   $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
-  $('auth-message-sign-in').text('')
+  $('#edit-doctor-message').text('')
 }
 
 const showAllDoctorsSuccess = function (res) {

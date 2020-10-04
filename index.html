@@ -92,13 +92,13 @@
 
 <section>
   <form id="edit-doctor-form" class="forms">
-    <input type="hidden" id="doctor_id" name="doctor[id]" placeholder="ID">
-    <input type="text" id="doctor_name" name="doctor[name]" placeholder="Name">
-    <input type="text" id="doctor_surName" name="doctor[surName]" placeholder="SurName">
-    <input type="text" id="doctor_profession" name="doctor[profession]" placeholder="Profession">
-    <input type="text" id="doctor_phone" name="doctor[phone]" placeholder="Phone Number">
-    <input type="text" id="doctor_address" name="doctor[address]" placeholder="Address">
-    <input type="number" id="doctor_yearsOfExperience" name="doctor[yearsOfExperience]" placeholder="Years of Experience">
+    <input type="hidden" id="doctor_id" name="doctor[id]" required placeholder="ID">
+    <input type="text" id="doctor_name" name="doctor[name]" required placeholder="Name">
+    <input type="text" id="doctor_surName" name="doctor[surName]" required placeholder="SurName">
+    <input type="text" id="doctor_profession" name="doctor[profession]" required placeholder="Profession">
+    <input type="text" id="doctor_phone" name="doctor[phone]" required placeholder="Phone Number">
+    <input type="text" id="doctor_address" name="doctor[address]" required placeholder="Address">
+    <input type="number" id="doctor_yearsOfExperience" name="doctor[yearsOfExperience]" required placeholder="Years of Experience">
     <input type="submit" class="edit-doctor-button" value="Edit Doctor"><br><br>
   </form>
   <p id="edit-doctor-message"></p>

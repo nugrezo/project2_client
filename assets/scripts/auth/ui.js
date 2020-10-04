@@ -4,11 +4,13 @@ const signUpSuccess = function (res) {
   $('#auth-message-sign-up').show()
   $('#auth-message-sign-up').text('Thanks for Siging up ' + res.user.email + ' You can Sign In Now')
   $('#sign-up-form').trigger('reset')
+  $('#auth-message-sign-out').text('')
 }
 
 const signUpFailure = function () {
   $('#auth-message-sign-up').text('Try again.')
   $('#sign-up-form').trigger('reset')
+  $('#auth-message-sign-out').text('')
 }
 
 const signInSuccess = function (res) {
@@ -41,6 +43,7 @@ const signInSuccess = function (res) {
 const signInFailure = function () {
   $('#auth-message-sign-in').text('Try again.')
   $('#sign-in-form').trigger('reset')
+  $('#auth-message-sign-up').text('')
 }
 
 const changePasswordSuccess = function (res) {
@@ -62,21 +65,28 @@ const signOutSuccess = function (res) {
   $('.container').show()
   $('#exp').show()
   $('#change-password-message').text('')
-  $('#change-password-form').text('')
+  $('#change-password-form').hide()
+  $('#change-password-form').trigger('reset')
   $('#auth-message-password-change').text('')
   $('#create-doctor-form').hide()
   $('#create-doctor-message').text('')
+  $('#create-doctor-form').trigger('reset')
   $('#show-all-doctors-form').hide()
   $('#show-all-doctors-message').text('')
+  $('#show-all-doctors-message').trigger('reset')
   $('#show-doctor-form').hide()
   $('#show-doctor-message').text('')
+  $('#show-doctor-form').trigger('reset')
   $('#doctor').text('')
   $('#delete-doctor-form').hide()
   $('#delete-doctor-message').text('')
+  $('#delete-doctor-form').trigger('reset')
   $('#update-doctor-form').hide()
   $('#update-doctor-message').text('')
+  $('#update-doctor-form').trigger('reset')
   $('#edit-doctor-form').hide()
   $('#edit-doctor-message').text('')
+  $('#edit-doctor-form').trigger('reset')
   $('#doctors').text('')
 }
 
