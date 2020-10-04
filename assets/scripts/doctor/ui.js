@@ -7,7 +7,7 @@ const createDoctorSuccess = function (res) {
 }
 
 const createDoctorFailure = function () {
-  $('#create-doctor-message').text('All required information must be complated.')
+  $('#create-doctor-message').text('All required information must be completed.')
   $('#change-password-message').text('')
   $('#delete-doctor-message').text('')
   $('#edit-doctor-message').text('')
